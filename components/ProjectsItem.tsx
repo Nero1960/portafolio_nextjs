@@ -33,23 +33,23 @@ export default function ProjectsItem({ project }: ProjectsItemProps) {
         <p className="text-4xl text-white font-bold">{project.title}</p>
         <p className="text-sm text-gray-500">{project.description}</p>
         <div className="flex items-center gap-x-1">
-          <Link
-            href={project.liveUrl}
-            target="_blank"
-            className="rounded-full bg-black p-1 hover:bg-primary-500 hover:text-black duration-700"
-          >
-            <CgArrowTopRight className="text-2xl text-gray-500 hover:text-black" />
-          </Link>
-
           {project.id !== 3 && (
             <Link
-              href={project.githubUrl}
+              href={project.liveUrl}
               target="_blank"
-              className="rounded-full"
+              className="rounded-full bg-black p-1 hover:bg-primary-500 hover:text-black duration-700"
             >
-              <BiLogoGithub className="text-[34px] text-gray-500 hover:-translate-y-1 duration-700 rounded-full" />
+              <CgArrowTopRight className="text-2xl text-gray-500 hover:text-black" />
             </Link>
           )}
+
+          <Link
+            href={project.githubUrl}
+            target="_blank"
+            className="rounded-full"
+          >
+            <BiLogoGithub className="text-[34px] text-gray-500 hover:-translate-y-1 duration-700 rounded-full" />
+          </Link>
         </div>
       </div>
     </div>
